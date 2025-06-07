@@ -1,8 +1,10 @@
 syntax = "proto3";
 
-package protobuf.api.example;
+package github.com.PavelNen.grpc.api.example;
 
-import "protobuf/api/example/message.proto";
+import "api/example/messages.proto";
+
+option go_package = "pkg/api/example";
 
 service Example {
   rpc CreatePost(CreatePostRequest) returns (CreatePostResponse);
