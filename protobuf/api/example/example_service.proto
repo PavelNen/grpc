@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package protobuf.api.example;
+
+import "protobuf/api/example/message.proto";
+
+service Example {
+  rpc CreatePost(CreatePostRequest) returns (CreatePostResponse);
+  rpc ListPosts(ListPostsRequest) returns (ListPostsResponse);
+}

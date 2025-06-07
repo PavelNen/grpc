@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package protobuf.api.example;
+
+message CreatePostRequest {
+  string title = 1;
+  string author_id = 2;
+  string content = 3;
+}
+
+message CreatePostResponse {
+  uint64 post_id = 1;
+}
+
+message ListPostsRequest {}
+
+message ListPostsResponse {}
