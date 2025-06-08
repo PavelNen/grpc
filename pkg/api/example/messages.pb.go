@@ -7,6 +7,7 @@
 package example
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -24,7 +25,7 @@ const (
 type CreatePostRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	AuthorId      string                 `protobuf:"bytes,2,opt,name=author_id,json=authorId,proto3" json:"author_id,omitempty"`
+	AuthorId      string                 `protobuf:"bytes,2,opt,name=author_id,proto3" json:"author_id,omitempty"`
 	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -83,7 +84,7 @@ func (x *CreatePostRequest) GetContent() string {
 
 type CreatePostResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PostId        uint64                 `protobuf:"varint,1,opt,name=post_id,json=postId,proto3" json:"post_id,omitempty"`
+	PostId        uint64                 `protobuf:"varint,1,opt,name=post_id,proto3" json:"post_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -201,13 +202,15 @@ var File_api_example_messages_proto protoreflect.FileDescriptor
 
 const file_api_example_messages_proto_rawDesc = "" +
 	"\n" +
-	"\x1aapi/example/messages.proto\x12$github.com.PavelNen.grpc.api.example\"`\n" +
-	"\x11CreatePostRequest\x12\x14\n" +
-	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1b\n" +
-	"\tauthor_id\x18\x02 \x01(\tR\bauthorId\x12\x18\n" +
-	"\acontent\x18\x03 \x01(\tR\acontent\"-\n" +
-	"\x12CreatePostResponse\x12\x17\n" +
-	"\apost_id\x18\x01 \x01(\x04R\x06postId\"\x12\n" +
+	"\x1aapi/example/messages.proto\x12$github.com.PavelNen.grpc.api.example\x1a\x1bbuf/validate/validate.proto\"\x82\x01\n" +
+	"\x11CreatePostRequest\x12 \n" +
+	"\x05title\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x02R\x05title\x12%\n" +
+	"\tauthor_id\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\tauthor_id\x12$\n" +
+	"\acontent\x18\x03 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\acontent\".\n" +
+	"\x12CreatePostResponse\x12\x18\n" +
+	"\apost_id\x18\x01 \x01(\x04R\apost_id\"\x12\n" +
 	"\x10ListPostsRequest\"\x13\n" +
 	"\x11ListPostsResponseB\x82\x02\n" +
 	"(com.github.com.PavelNen.grpc.api.exampleB\rMessagesProtoP\x01Z\x0fpkg/api/example\xa2\x02\x06GCPGAE\xaa\x02$Github.Com.PavelNen.Grpc.Api.Example\xca\x02$Github\\Com\\PavelNen\\Grpc\\Api\\Example\xe2\x020Github\\Com\\PavelNen\\Grpc\\Api\\Example\\GPBMetadata\xea\x02)Github::Com::PavelNen::Grpc::Api::Exampleb\x06proto3"

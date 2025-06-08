@@ -1,3 +1,4 @@
+include vendor.proto.mk
 
 LOCAL_BIN := $(CURDIR)/bin
 
